@@ -1,0 +1,32 @@
+{
+  "name": "express-angularjs-typescript-sqlite-webpack",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Gareth Allen-Stringer <17257712+garethallenstringer@users.noreply.github.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/server.ts",
+    "start": "nodemon dist/server.js",
+    "prod": "yarn run build && yarn run start"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.3",
+    "debug": "~4.1.1",
+    "express": "^4.16.4",
+    "helmet": "^3.17.0",
+    "http-errors": "~1.7.2",
+    "idb": "^4.0.3",
+    "morgan": "~1.9.0",
+    "sqlite3": "^4.0.6"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.1",
+    "@types/debug": "^4.1.4",
+    "@types/express": "^4.16.1",
+    "@types/helmet": "^0.0.43",
+    "@types/http-errors": "^1.6.1",
+    "@types/sqlite3": "^3.1.5"
+  }
+}

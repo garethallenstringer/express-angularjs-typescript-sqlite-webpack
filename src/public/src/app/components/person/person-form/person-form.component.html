@@ -1,0 +1,90 @@
+<div class="panel panel-info">
+    <div class="panel-heading"><h1 class="panel-title">Form</h1></div>
+    <form name="personForm"
+          class="form-horizontal panel-body"
+          novalidate
+          ng-submit="$ctrl.submitPerson(personForm)">
+        <fieldset ng-disabled="$ctrl.service.isLoading">
+            <div class="form-group" ng-class="{'has-error': personForm.name.$touched && personForm.name.$invalid}">
+                <label for="name"
+                       class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text"
+                           name="name"
+                           class="form-control"
+                           id="name"
+                           ng-model="$ctrl.candidatePerson.full_name"
+                           ng-required="true">
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': personForm.email.$touched && personForm.email.$invalid}">
+                <label for="email"
+                       class="col-sm-2 control-label">Email</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input type="email"
+                               name="email"
+                               class="form-control"
+                               id="email"
+                               ng-model="$ctrl.candidatePerson.email"
+                               ng-required="true">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': personForm.dob.$touched && personForm.dob.$invalid}">
+                <label for="dob-input"
+                       class="col-sm-2 control-label">Date of Birth</label>
+                <div class="col-sm-10">
+                    <div class="input-group">
+                        <input type="text"
+                               name="dob"
+                               class="form-control"
+                               id="dob-input"
+                               uib-datepicker-popup="{{$ctrl.dateFormat}}"
+                               is-open="$ctrl.popup.opened"
+                               datepicker-options="$ctrl.dateOptions"
+                               ng-model="$ctrl.candidatePerson.date_of_birth"
+                               ng-required="true"/>
+                        <span class="input-group-btn">
+                    <button type="button"
+                            class="btn btn-default"
+                            ng-click="$ctrl.openPopup()">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                    </button>
+                </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-class="{'has-error': personForm.noc.$touched && personForm.noc.$invalid}">
+                <label for="children"
+                       class="col-sm-2 control-label">Number of Children</label>
+                <div class="col-sm-10">
+                    <input type="number"
+                           name="noc"
+                           class="form-control"
+                           id="children"
+                           min="0"
+                           ng-model="$ctrl.candidatePerson.num_of_children"
+                           ng-required="true">
+                </div>
+            </div>
+            <div class="form-group"
+                 style="margin-bottom: 0">
+                <div class="col-sm-offset-2 col-sm-1">
+                    <button type="button"
+                            ng-click="$ctrl.resetForm(personForm)"
+                            class="btn btn-info"
+                            ng-disabled="personForm.$pristine">Reset
+                    </button>
+                </div>
+                <div class="">
+                    <button type="submit"
+                            class="btn btn-primary"
+                            ng-disabled="personForm.$invalid">Submit
+                    </button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

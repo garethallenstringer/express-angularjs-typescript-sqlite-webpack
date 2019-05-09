@@ -1,0 +1,36 @@
+<div class="panel panel-info">
+    <div class="panel-heading"><h1 class="panel-title">Table</h1></div>
+    <table class="table table-responsive"
+           ts-wrapper
+           ts-wrapping-element-class="table-responsive panel-body"
+           ts-item-name="person"
+           ts-item-name-plural="people">
+        <thead>
+        <tr>
+            <th ts-criteria="full_name"
+                ts-default
+                ts-name="Full Name"
+                ts-filter>Name
+            </th>
+            <th ts-criteria="date_of_birth|parseDate"
+                ts-name="Date of Birth">Date of Birth
+            </th>
+            <th ts-criteria="email"
+                ts-name="Email"
+                ts-filter>Email Address
+            </th>
+            <th ts-criteria="num_of_children|parseInt"
+                ts-name="Number of Children">Number of Children
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="person in $ctrl.service.allPeople" ts-repeat>
+            <td>{{person.full_name}}</td>
+            <td>{{person.date_of_birth | date}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.num_of_children}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -15,7 +15,7 @@
     "test:dev": "karma start --browsers Chrome"
   },
   "dependencies": {
-    "angular": "^1.7.8",
+    "angular": "^1.7.9",
     "angular-animate": "^1.7.8",
     "angular-messages": "^1.7.8",
     "angular-tablesort": "^1.6.1",
